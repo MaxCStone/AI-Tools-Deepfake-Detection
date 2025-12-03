@@ -1,7 +1,15 @@
-container="/data/containers/msoe-tensorflow-20.07-tf2-py3.sif"
-
-# Command to run inside container
-command="python model.py --data /data/train --batch_size 8 --epochs 15 --main_dir /home/ad.msoe.edu/ruizi/AITools/Final ProjectVG --augment_data true --fine_tune true"
-
-# Execute singularity container on node.
-singularity exec --nv -B /data:/data ${container} /usr/local/bin/nvidia_entrypoint.sh ${command}
+#!/bin/bash
+#SBATCH --job-name=training-model
+#SBATCH --output=logs/HPT_RUN_%j.log
+#SBATCH --error=logs/HPT_RUN_%j.err
+#SBATCH --partition=teaching
+#SBATCH --gpus=1
+#SBATCH --cpus-per-gpu=16
+ 
+uv run model.py \
+    --data ../data/Dataset \
+    --batch_size 32 \
+    --epochs 2 \
+    --main_dir . \
+    --augment_data true \
+    --fine_tune false
