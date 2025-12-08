@@ -20,33 +20,21 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "matplotlib" },
-<<<<<<< HEAD
-    { name = "scikit-learn" },
-    { name = "scipy" },
-    { name = "tensorflow", extra = ["and-cuda"] },
-=======
     { name = "notebook" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "scikit-learn" },
     { name = "tensorflow" },
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "matplotlib", specifier = ">=3.10.7" },
-<<<<<<< HEAD
-    { name = "scikit-learn", specifier = ">=1.7.2" },
-    { name = "scipy", specifier = ">=1.16.3" },
-    { name = "tensorflow", extras = ["and-cuda"], specifier = ">=2.20.0" },
-=======
     { name = "notebook", specifier = ">=7.5.0" },
     { name = "numpy", specifier = ">=2.3.5" },
     { name = "pandas", specifier = ">=2.3.3" },
     { name = "scikit-learn", specifier = ">=1.7.2" },
     { name = "tensorflow", specifier = ">=2.20.0" },
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 ]
 
 [[package]]
@@ -612,8 +600,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "ipykernel"
 version = "7.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -707,7 +693,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 name = "joblib"
 version = "1.5.2"
 source = { registry = "https://pypi.org/simple" }
@@ -717,8 +702,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "json5"
 version = "0.12.1"
 source = { registry = "https://pypi.org/simple" }
@@ -930,7 +913,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 name = "keras"
 version = "3.12.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2022,8 +2004,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "rpds-py"
 version = "0.30.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2090,7 +2070,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 name = "scikit-learn"
 version = "1.7.2"
 source = { registry = "https://pypi.org/simple" }
@@ -2171,8 +2150,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "send2trash"
 version = "1.8.3"
 source = { registry = "https://pypi.org/simple" }
@@ -2182,7 +2159,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 name = "setuptools"
 version = "80.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2313,8 +2289,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "terminado"
 version = "0.18.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2329,7 +2303,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 name = "threadpoolctl"
 version = "3.6.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2339,8 +2312,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "tinycss2"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2381,7 +2352,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 name = "typing-extensions"
 version = "4.15.0"
 source = { registry = "https://pypi.org/simple" }

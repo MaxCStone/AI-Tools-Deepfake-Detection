@@ -6,15 +6,9 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "matplotlib>=3.10.7",
-<<<<<<< HEAD
-    "scikit-learn>=1.7.2",
-    "scipy>=1.16.3",
-    "tensorflow[and-cuda]>=2.20.0",
-=======
     "notebook>=7.5.0",
     "numpy>=2.3.5",
     "pandas>=2.3.3",
     "scikit-learn>=1.7.2",
     "tensorflow>=2.20.0",
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
 ]

@@ -1,0 +1,28 @@
+Namespace(data='../data/Dataset', batch_size='32', epochs='2', main_dir='.', augment_data='true', fine_tune='false')
+Found 140002 images belonging to 2 classes.
+Found 39428 images belonging to 2 classes.
+Epoch 1/2
+4375/4375 - 4920s - 1s/step - accuracy: 0.7330 - loss: 0.5638 - val_accuracy: 0.7764 - val_loss: 0.4677
+Epoch 2/2
+4375/4375 - 1085s - 248ms/step - accuracy: 0.7188 - loss: 0.4417 - val_accuracy: 0.7764 - val_loss: 0.4688
+Saved confusion matrix to ./vgg16/confusion_b32_e2.png and classification report to ./vgg16/classification_report_b32_e2.txt
+Model saved to HDF5 file: ./vgg16/model_b32_e2_augtrue_ftfalse.h5
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape           ┃       Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+│ input_layer_1 (InputLayer)      │ (None, 224, 224, 3)    │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ vgg16 (Functional)              │ (None, 7, 7, 512)      │    14,714,688 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ global_average_pooling2d        │ (None, 512)            │             0 │
+│ (GlobalAveragePooling2D)        │                        │               │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dropout (Dropout)               │ (None, 512)            │             0 │
+├─────────────────────────────────┼────────────────────────┼───────────────┤
+│ dense (Dense)                   │ (None, 1)              │           513 │
+└─────────────────────────────────┴────────────────────────┴───────────────┘
+ Total params: 14,716,229 (56.14 MB)
+ Trainable params: 513 (2.00 KB)
+ Non-trainable params: 14,714,688 (56.13 MB)
+ Optimizer params: 1,028 (4.02 KB)

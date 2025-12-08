@@ -46,8 +46,10 @@ def main():
     x = base_model(inputs, training=False)
 
     x =  keras.layers.GlobalAveragePooling2D()(x)
+    
+    dropout = keras.layers.Dropout(0.2)(x)
 
-    outputs = keras.layers.Dense(1, activation = 'sigmoid')(x)
+    outputs = keras.layers.Dense(1, activation = 'sigmoid')(dropout)
 
     model = keras.Model(inputs, outputs)
 
@@ -72,12 +74,12 @@ def main():
                 horizontal_flip=False,  
                 vertical_flip=False) 
 
-    train_it = datagen.flow_from_directory( '../data/Dataset/Train/', 
+    train_it = datagen.flow_from_directory( 'data/Dataset/Train', 
                                            target_size=(224,224), 
                                            color_mode='rgb', 
                                            batch_size=my_batch_size,
                                            class_mode="binary")
-    valid_it = datagen.flow_from_directory('../data/Dataset/Validation/', 
+    valid_it = datagen.flow_from_directory('data/Dataset/Validation/', 
                                           target_size=(224,224), 
                                           color_mode='rgb', 
                                            batch_size=my_batch_size,
@@ -160,7 +162,7 @@ def save_loss_plot(history, args, output_dir):
     plt.plot(history['val_accuracy'], label='Validation Accuracy')
     plt.xlabel('Epochs')
     plt.ylabel('Accuracy')
-    plt.title('Fruit Classification, Batch Size: ' + args.batch_size + ' Epochs: ' + args.epochs)
+    plt.title('Deepfake Detector (Dropout), Batch Size: ' + args.batch_size + ' Epochs: ' + args.epochs)
     plt.legend()
     
     plot_filename= 'model_b' + args.batch_size + '_e' + args.epochs + '.png'

@@ -6,7 +6,7 @@
 #SBATCH --gpus=1
 #SBATCH --cpus-per-gpu=16
  
-uv run model.py \
+uv run vgg16/model.py \
     --data ../data/Dataset \
     --batch_size 32 \
     --epochs 2 \
