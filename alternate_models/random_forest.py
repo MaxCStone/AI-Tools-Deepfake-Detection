@@ -65,7 +65,7 @@ with open(report_path, 'w') as f:
 
 cm = confusion_matrix(y_pred, y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Fake', 'Real'])
-disp.plot(cmap=plt.cm.Blues)
+disp = disp.plot(cmap=plt.cm.Blues)
 plt.title('Confusion Matrix')
 disp.plot().figure_.savefig('confusion_matrix.png')
 print("Random Forest Model Complete")
