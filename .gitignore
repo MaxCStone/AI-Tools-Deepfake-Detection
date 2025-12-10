@@ -1,4 +1,6 @@
 .venv
+.pyproject.toml
+.uv.lock
 vgg16/logs/
 pyproject.toml
 uv.lock
