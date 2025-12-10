@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 .venv
+.pyproject.toml
+.uv.lock
 vgg16/logs/
-=======
-.venv/
->>>>>>> eb2e8f14bd2ba857edffa0927c54b8db4e0d4d52
+*.h5
