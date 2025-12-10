@@ -1,12 +1,11 @@
-
-
 import os
+from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
 from keras.preprocessing.image import img_to_array, load_img
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import ConfusionMatrixDisplay, confusion_matrix, accuracy_score
+from sklearn.metrics import ConfusionMatrixDisplay, classification_report, confusion_matrix, accuracy_score
 
 
 def process_image(image_path):
@@ -56,16 +55,17 @@ decision_tree.fit(x_train, y_train)
 
 # Model Testing and Analysis:
 
-y_pred=decision_tree.predict(x_test)
+y_pred=decision_tree.predict(x_test) 
 
-f = open("accuracy.txt", "w")
-f.write(str(accuracy_score(y_test, y_pred)))
-f.flush()
-f.close()   
+report = classification_report(y_test, y_pred, target_names=['Fake', 'Real'])
+report_path = os.path.join('random_forest_accuracy_report.txt')
+with open(report_path, 'w') as f:
+    f.write(report)
 
 
-cm = confusion_matrix(y_test, y_pred)
-disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+cm = confusion_matrix(y_pred, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Fake', 'Real'])
+disp.plot(cmap=plt.cm.Blues)
+plt.title('Confusion Matrix')
 disp.plot().figure_.savefig('confusion_matrix.png')
 print("Random Forest Model Complete")
-

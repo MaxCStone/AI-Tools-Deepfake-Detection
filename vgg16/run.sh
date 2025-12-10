@@ -9,7 +9,7 @@
 uv run vgg16/model.py \
     --data ../data/Dataset \
     --batch_size 32 \
-    --epochs 2 \
+    --epochs 10 \
     --main_dir . \
     --augment_data true \
-    --fine_tune false
+    --fine_tune true
